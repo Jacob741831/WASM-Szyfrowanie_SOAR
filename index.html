@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Szyfrowanie XOR</title>
+</head>
+
+<body>
+
+    <h1>Szyfrowanie XOR - WASM</h1>
+    <h3>Tekst do zaszyfrowania:</h3>
+    <textarea id="inputText" rows="5" cols="50"></textarea>
+
+    <br><br>
+
+    <button id="encryptBtn">Szyfruj</button>
+
+    <h3>Zaszyfrowany tekst:</h3>
+
+    <textarea id="encryptedText" rows="5" cols="50"></textarea>
+
+    <br><br>
+
+    <button id="decryptBtn">Deszyfruj</button>
+
+    <h3>Odszyfrowany tekst:</h3>
+    <textarea id="decryptedText" rows="5" cols="50" readonly></textarea>
+
+    <p id="status">Ładowanie WASM...</p>
+
+    <script>
+        // Konfiguracja modułu WebAssembly
+        var Module = {
+            onRuntimeInitialized: function() {
+                document.dispatchEvent(new Event("wasm-ready"));
+            }
+        };
+    </script>
+
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
