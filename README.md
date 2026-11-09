@@ -1,0 +1,1 @@
+# WASM-Szyfrowanie_SOAR
